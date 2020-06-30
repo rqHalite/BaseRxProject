@@ -1,0 +1,125 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.rock.baserxproject"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+
+
+    signingConfigs {
+        release {
+            keyAlias 'rxJks'
+            keyPassword '123456'
+            storeFile file('../rxJks.jks')
+            storePassword '123456'
+        }
+        debug {
+            keyAlias 'rxJks'
+            keyPassword '123456'
+            storeFile file('../rxJks.jks')
+            storePassword '123456'
+        }
+    }
+    buildTypes {
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            // 移除无用的resource文件，前提minifyEnabled必须打开
+            shrinkResources true
+            // ZipAlign优化
+            zipAlignEnabled true
+            // 设置混淆
+            minifyEnabled true
+            //加载默认混淆配置涵
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 正式环境签名
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+//            // 移除无用的resource文件，前提minifyEnabled必须打开
+//            shrinkResources true
+//            // ZipAlign优化
+//            zipAlignEnabled true
+//            // 设置混淆
+//            minifyEnabled true
+//            //加载默认混淆配置涵
+//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+//            // 正式环境签名
+//            signingConfig signingConfigs.release
+
+            //ZipAlign优化
+            zipAlignEnabled false
+            //设置混淆
+            minifyEnabled false
+            //加载默认混淆配置涵
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            // 开发环境签名
+            signingConfig signingConfigs.debug
+            ext.enableCrashlytics = false//不需要运行崩溃上报
+
+        }
+    }
+
+//    /*配置渠道*/
+    flavorDimensions "default"//这个名字貌似随便取，也可以有多个，总之一定要有
+    //多渠道打包
+    productFlavors {
+        tencent {}  //应用宝
+        baidu {}    //百度
+        xiaomi {}   //小米
+        huawei {}   //华为
+        google {}   //谷歌
+
+        productFlavors.all {
+            flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+    }
+
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation project(path: ':basemodel')
+
+    // ButterKnife 注解库：https://github.com/JakeWharton/butterknife
+    if (project.hasProperty('android.injected.invoked.from.ide')) {
+        // 开发时使用运行时注解，提升 IDE 编译速度
+        implementation 'com.jakewharton:butterknife-reflect:10.2.0'
+    } else {
+        // 打包时使用编译时注解，提升 APP 运行速度
+        implementation 'com.jakewharton:butterknife:10.2.0'
+        annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+    }
+
+    //https://github.com/H07000223/FlycoTabLayout
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'
+
+    //指示器
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+
+    implementation 'com.bm.photoview:library:1.4.1'
+}

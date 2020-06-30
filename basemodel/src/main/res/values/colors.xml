@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gay">#BBBBBB</color>
+    <color name="gay_shallow">#EEEE</color>
+    <color name="black_deep">#FF000000</color>
+    <color name="btn_gray_normal">#c0c0c0</color>
+    <color name="segmentation_line">#EEEEEE</color>
+    <color name="toolbar_title_text_color">#333333</color>
+    <color name="toolbar_tint_color">#0099FF</color>
+    <color name="toast_background">#666666</color>
+    <color name="windowBackground">#F1F5F8</color>
+    <color name="color_white">#FFFFFF</color>
+</resources>

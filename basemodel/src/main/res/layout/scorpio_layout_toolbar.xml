@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/px_138"
+    android:background="?colorPrimary"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/px_30"
+        android:paddingRight="@dimen/px_30">
+
+
+        <LinearLayout
+            android:id="@+id/back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="@dimen/px_64"
+                android:layout_height="@dimen/px_64"
+                android:src="@drawable/icon_back"
+                android:tint="@color/toolbar_tint_color" />
+
+            <TextView
+                android:id="@+id/back_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/base_back_text"
+                android:textColor="@color/toolbar_tint_color"
+                android:textSize="@dimen/px_45" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title_text"
+            style="@style/TextLineStyle"
+            android:layout_width="@dimen/px_750"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:maxLength="8"
+            android:textColor="@color/toolbar_title_text_color"
+            android:textSize="@dimen/px_52" />
+
+
+        <LinearLayout
+            android:id="@+id/menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/menu_image"
+                android:layout_width="@dimen/px_64"
+                android:layout_height="@dimen/px_64"
+                android:src="@drawable/icon_menu"
+                android:tint="@color/toolbar_tint_color"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:id="@+id/menu_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/toolbar_tint_color"
+                android:textSize="@dimen/px_43" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View style="@style/SegmentationLineStyle" />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:layout_height="@dimen/px_240">
+
+    <ImageView
+        android:id="@+id/item_refresh_loading"
+        android:src="@mipmap/ic_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/item_refresh_arrow"
+        android:src="@mipmap/ic_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/item_refresh_state"
+        android:textSize="@dimen/px_42"
+        android:text="@string/pullToRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

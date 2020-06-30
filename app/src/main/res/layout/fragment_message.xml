@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.fragment.MessageFragment">
+
+    <ImageView
+        android:id="@+id/iv_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-200dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+
+        <com.scwang.smartrefresh.layout.header.ClassicsHeader
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srlAccentColor="@android:color/white" />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent">
+                <!--
+                AppBarLayout里放入的都可以跟着向上滑动滑出布局的的，
+                添加app:layout_scrollFlags="scroll"属性可以滑出布局
+                TabLayout没有添加，所以停留在顶部
+                -->
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <include layout="@layout/view_user_home_title" />
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        style="@style/AppTheme.Toolbar"
+                        android:layout_width="match_parent"
+                        android:background="#00000000"
+                        android:paddingTop="@dimen/px_60"
+                        android:visibility="visible"
+                        app:layout_collapseMode="pin" />
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/segmentation_line"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px_1"
+                        android:background="@color/colorAccent" />
+
+                    <com.flyco.tablayout.CommonTabLayout
+                        android:id="@+id/magic_indicator"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="#E45171"
+                        tl:tl_iconVisible="false"
+                        tl:tl_indicator_color="#eeeeee"
+                        tl:tl_indicator_corner_radius="1.5dp"
+                        tl:tl_indicator_height="3dp"
+                        tl:tl_indicator_style="TRIANGLE"
+                        tl:tl_indicator_width="10dp"
+                        tl:tl_textsize="14sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px_1"
+                        android:background="@color/colorAccent" />
+                </LinearLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include layout="@layout/app_title" />
+</FrameLayout>

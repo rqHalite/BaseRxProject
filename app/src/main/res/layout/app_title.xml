@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar1"
+    style="@style/AppTheme.Toolbar"
+    android:layout_marginBottom="0dp"
+    android:background="@color/color_white"
+    app:layout_collapseMode="pin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back" />
+            <TextView
+                android:gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/toolbar_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:maxLines="1"
+                android:text="个人主页"
+                android:textColor="@color/toolbar_tint_color"
+                android:textSize="@dimen/px_48" />
+
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/iv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:src="@drawable/icon_menu" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>

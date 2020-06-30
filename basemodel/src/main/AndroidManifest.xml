@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rock.basemodel">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application>
+        <activity android:name=".webview.X5WebActivity"></activity>
+        <service
+            android:name=".webview.X5NetServer"
+            android:enabled="true" />
+
+        <!--友盟统计配置Appkey与Channel  （请在 Gradle 中配置，请不要在此处修改）-->
+        <!--value的值填写你在友盟后台申请的应用Appkey-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="${UMENG_APPKEY}" />
+
+    </application>
+</manifest>

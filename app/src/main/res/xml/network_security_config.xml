@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--防止android 9.0 拒绝访问http的问题-->
+    <!--<domain-config>-->
+        <!--<domain includeSubdomains="true">anjie575.natapp1.cc</domain>-->
+        <!--<domain includeSubdomains="true">app.wdimax.cn</domain>-->
+    <!--</domain-config>-->
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
+

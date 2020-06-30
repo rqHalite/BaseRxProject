@@ -1,0 +1,77 @@
+<resources>
+    <!-- 单行文字样式 -->
+    <style name="TextLineStyle">
+        <item name="android:lines">1</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="progress_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!--通用的dialog样式-->
+    <style name="UniversalDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--透明背景-->
+    <style name="UniversalDialogStyleNoBackground" parent="UniversalDialogStyle">
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+    <!--控制底部dialog进出动画-->
+    <style name="dialog_animation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/scorpio_dialog_enter</item>
+        <!-- 进入时的动画 -->
+        <item name="android:windowExitAnimation">@anim/scorpio_dialog_exit</item>
+        <!-- 退出时的动画 -->
+    </style>
+
+    <!-- 通用输入框 -->
+    <style name="OrdinaryEditTheme" parent="TextLineStyle">
+        <item name="android:background">@android:color/white</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:padding">20px</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">90px</item>
+    </style>
+    <!-- 通用输入框  没有中文-->
+    <style name="OrdinaryEditTheme.NoChinese" parent="OrdinaryEditTheme">
+        <item name="android:digits">1234567890qwertyuiopasdfghjklzxcvbnm</item>
+    </style>
+    <!-- 垂直平均分布 -->
+    <style name="VerticallyWeightAverage">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <!-- 水平直平均分布 -->
+    <style name="HorizontallyWeightAverage">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!--分割线-->
+    <style name="SegmentationLineStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/px_3</item>
+        <item name="android:background">@color/segmentation_line</item>
+    </style>
+    <!--分割线-->
+    <style name="SegmentationWrapLineStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/px_1</item>
+        <item name="android:background">@color/segmentation_line</item>
+    </style>
+</resources>
