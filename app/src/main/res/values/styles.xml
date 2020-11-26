@@ -4,13 +4,13 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
     <style name="MyAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- 窗口背景颜色 -->
-        <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:windowBackground">@color/toolbar_tint_color</item>
         <!-- 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色 -->
         <item name="colorPrimary">@color/windowBackground</item>
         <!-- 应用的主要暗色调，statusBarColor默认使用该颜色 -->

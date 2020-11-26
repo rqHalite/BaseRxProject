@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar1"
     style="@style/AppTheme.Toolbar"
-    android:layout_marginBottom="0dp"
-    android:background="@color/color_white"
+    android:layout_marginBottom="0px"
+    android:background="@color/toolbar_tint_color"
     app:layout_collapseMode="pin">
 
     <LinearLayout
@@ -28,7 +28,7 @@
                 android:layout_gravity="center"
                 android:maxLines="1"
                 android:text="个人主页"
-                android:textColor="@color/toolbar_tint_color"
+                android:textColor="@color/color_white"
                 android:textSize="@dimen/px_48" />
 
         <ImageView

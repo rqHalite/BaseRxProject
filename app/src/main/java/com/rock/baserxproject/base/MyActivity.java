@@ -1,5 +1,6 @@
 package com.rock.baserxproject.base;
 
+import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
@@ -26,6 +27,7 @@ public abstract class MyActivity extends BasicTitleActivity {
     /**
      * 初始化横竖屏方向，会和 LauncherTheme 主题样式有冲突，注意不要同时使用
      */
+    @SuppressLint("SourceLockedOrientationActivity")
     protected void initOrientation() {
         // 当前 Activity 不能是透明的并且没有指定屏幕方向，默认设置为竖屏
         if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED) {

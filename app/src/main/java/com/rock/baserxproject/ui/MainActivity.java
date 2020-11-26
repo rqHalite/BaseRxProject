@@ -52,7 +52,8 @@ public class MainActivity extends MyActivity {
     protected void init(Bundle savedInstanceState) {
         super.init(savedInstanceState);
         hideToolbarView();
-        showStatusView(true);
+        showStatusView(false);
+        setRefreshEnable(true);
         //viewpager方式
 //        HomeFragmentAdapter adapter = new HomeFragmentAdapter(this);
 //        mainScroll.setAdapter(adapter);

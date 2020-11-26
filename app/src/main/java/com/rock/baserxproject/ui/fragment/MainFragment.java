@@ -8,12 +8,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.loadmore.LoadMoreView;
 import com.hjq.toast.ToastUtils;
+import com.rock.basemodel.baseui.utils.BarTextColorUtils;
 import com.rock.basemodel.baseui.utils.ToastUtil;
 import com.rock.basemodel.baseui.utils.view.MyRefreshHeader;
 import com.rock.basemodel.http.RxNetWorkUtil;
@@ -83,14 +85,12 @@ public class MainFragment extends MyFragment implements BaseQuickAdapter.OnItemC
 
     @Override
     protected void initData() {
-//        int statusheight = StatusBarUtil.getStatusBarHeight(getActivity());
-//        if (statusheight != -1) {
-//            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusheight);
-//            topStatus.setLayoutParams(params);
-////            FrameLayout.LayoutParams fparams = (FrameLayout.LayoutParams) mainToplayout.getLayoutParams();
-////            fparams.topMargin = statusheight;
-////            mainToplayout.setLayoutParams(fparams);
-//        }
+        int statusheight = BarTextColorUtils.getStatusBarHeight(mActivity);
+        if (statusheight != -1) {
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusheight);
+            topStatus.setLayoutParams(params);
+            topStatus.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.toolbar_tint_color));
+        }
         MyRefreshHeader refreshHeader = new MyRefreshHeader(getActivity(), MyRefreshHeader.TYPE_OTHER);
         refreshlayout.setRefreshHeader(refreshHeader);
         refreshlayout.setOnRefreshListener(new OnRefreshListener() {
