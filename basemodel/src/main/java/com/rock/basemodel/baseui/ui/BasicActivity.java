@@ -9,6 +9,7 @@ import androidx.annotation.StringRes;
 import com.rock.basemodel.BaseApplication;
 import com.rock.basemodel.baseui.utils.BarTextColorUtils;
 import com.rock.basemodel.baseui.utils.ToastUtil;
+import com.rock.basemodel.statusbars.StatusBarCompat;
 import com.rock.basemodel.umeng.UmengUtils;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -33,7 +34,9 @@ public class BasicActivity  extends RxAppCompatActivity {
         }
         BarTextColorUtils.setLightStatusBar(this, true);
     }
-
+    protected void setStatusBarColor(int color) {
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(color));
+    }
     //跳转
     protected void skipActivity(Class cls, int ResultCode, Intent intent, Bundle bundle) {
         intent.setClass(this, cls);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tl="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +7,11 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".ui.fragment.MessageFragment">
+
+    <View
+        android:id="@+id/top_status"
+        android:layout_width="match_parent"
+        android:layout_height="0px" />
 
     <ImageView
         android:id="@+id/iv_header"
@@ -55,7 +60,7 @@
                         style="@style/AppTheme.Toolbar"
                         android:layout_width="match_parent"
                         android:background="#00000000"
-                        android:paddingTop="@dimen/px_60"
+                        android:paddingTop="@dimen/px_80"
                         android:visibility="visible"
                         app:layout_collapseMode="pin" />
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
@@ -74,7 +79,7 @@
                     <com.flyco.tablayout.CommonTabLayout
                         android:id="@+id/magic_indicator"
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
+                        android:layout_height="42dp"
                         android:background="#E45171"
                         tl:tl_iconVisible="false"
                         tl:tl_indicator_color="#eeeeee"
@@ -100,5 +105,9 @@
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
-    <include layout="@layout/app_title" />
-</FrameLayout>
+    <include
+        layout="@layout/app_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_status" />
+</RelativeLayout>

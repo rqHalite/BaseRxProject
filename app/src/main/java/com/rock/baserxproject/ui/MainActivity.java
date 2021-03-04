@@ -53,7 +53,8 @@ public class MainActivity extends MyActivity {
         super.init(savedInstanceState);
         hideToolbarView();
         showStatusView(false);
-        setRefreshEnable(true);
+        setRefreshEnable(false);
+//        setStatusBarColor(R.color.colorPrimary);
         //viewpager方式
 //        HomeFragmentAdapter adapter = new HomeFragmentAdapter(this);
 //        mainScroll.setAdapter(adapter);

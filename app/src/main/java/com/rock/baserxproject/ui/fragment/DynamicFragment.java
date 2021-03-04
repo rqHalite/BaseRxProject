@@ -3,15 +3,12 @@ package com.rock.baserxproject.ui.fragment;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.rock.basemodel.baseui.utils.ToastUtil;
-import com.rock.basemodel.baseui.utils.view.MyRefreshHeader;
 import com.rock.basemodel.http.retrofit.rx.MyObserver;
 import com.rock.basemodel.webview.X5WebActivity;
 import com.rock.baserxproject.R;
@@ -19,11 +16,7 @@ import com.rock.baserxproject.adapter.MainAdapter;
 import com.rock.baserxproject.base.MyFragment;
 import com.rock.baserxproject.bean.HttpBean;
 import com.rock.baserxproject.http.RxAppNetWorkUtils;
-import com.rock.baserxproject.utils.StatusBarUtil;
 import com.rock.baserxproject.view.CustomLoadMoreView;
-import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;

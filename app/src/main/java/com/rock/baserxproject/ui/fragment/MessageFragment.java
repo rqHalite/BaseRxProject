@@ -7,24 +7,26 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.ButtonBarLayout;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.google.android.material.appbar.AppBarLayout;
+import com.rock.basemodel.baseui.utils.BarTextColorUtils;
 import com.rock.baserxproject.R;
 import com.rock.baserxproject.adapter.ViewPagerAdapter;
 import com.rock.baserxproject.base.MyFragment;
 import com.rock.baserxproject.bean.TabEntity;
 import com.rock.baserxproject.utils.DisplayUtil;
 import com.rock.baserxproject.utils.ScreenUtil;
-import com.rock.baserxproject.utils.StatusBarUtil;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -69,6 +71,8 @@ public class MessageFragment extends MyFragment implements OnRefreshListener, Ap
     Unbinder unbinder;
     @BindView(R.id.magic_indicator)
     CommonTabLayout magicIndicator;
+    @BindView(R.id.top_status)
+    View topStatus;
     private List<RxFragment> mFragments = new ArrayList<>();
     private ViewPagerAdapter mViewPagerAdapter;
     private CommonNavigator mCommonNavigator;
@@ -91,16 +95,18 @@ public class MessageFragment extends MyFragment implements OnRefreshListener, Ap
 
     @Override
     protected void initData() {
-
+        int statusheight = BarTextColorUtils.getStatusBarHeight(mActivity);
+        if (statusheight != -1) {
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusheight);
+            topStatus.setLayoutParams(params);
+            topStatus.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.toolbar_tint_color));
+        }
         //禁止上拉加载
         mRefreshLayout.setEnableLoadMore(false);
         mRefreshLayout.setOnRefreshListener(this);
         //上滑移动 设置监听
         mAppbarLayout.addOnOffsetChangedListener(this);
 
-//        //增加View的paddingTop,增加的值为状态栏高度 (智能判断，并设置高度)  titleBar
-//        StatusBarUtil.setPaddingSmart(getContext(), mToolbar);
-//        StatusBarUtil.setPaddingSmart(getContext(), mToolbar1);
 
         //获得屏幕宽度
         mScreenWidth = ScreenUtil.getScreenWidth(getContext());

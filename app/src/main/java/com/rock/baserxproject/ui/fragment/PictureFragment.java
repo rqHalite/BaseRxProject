@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SimpleItemAnimator;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -20,6 +21,7 @@ import com.rock.baserxproject.bean.HttpBean;
 import com.rock.baserxproject.bean.PictureListBean;
 import com.rock.baserxproject.http.RxAppNetWorkUtils;
 import com.rock.baserxproject.utils.ImageLoader;
+import com.rock.baserxproject.utils.NoDefaultItemAnimator;
 import com.rock.baserxproject.utils.StaggeredDividerItemDecoration;
 import com.rock.baserxproject.view.CustomLoadMoreView;
 import com.rock.baserxproject.view.dialog.ImagePagerDialog;
@@ -64,7 +66,7 @@ public class PictureFragment extends MyFragment implements BaseQuickAdapter.Requ
         manager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
         picList.setLayoutManager(manager);
         picList.setAdapter(mAdapter = new PicListAdapter(mDatas));
-        picList.setItemAnimator(null);
+        picList.setItemAnimator(new NoDefaultItemAnimator());
         mAdapter.setOnLoadMoreListener(this);
         mAdapter.setLoadMoreView(new CustomLoadMoreView());
         mAdapter.setOnItemChildClickListener(this);
@@ -109,6 +111,11 @@ public class PictureFragment extends MyFragment implements BaseQuickAdapter.Requ
                         images.add(b.getUrl());
                     }
                     mAdapter.loadMoreComplete();
+                    //添加防止刷新闪动
+                    ((SimpleItemAnimator) picList.getItemAnimator()).setSupportsChangeAnimations(false);
+                    if (!mAdapter.hasObservers()) {
+                        mAdapter.setHasStableIds(true);
+                    }
                     mAdapter.notifyDataSetChanged();
                 }
             }

@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.rock.basemodel.dialog.BaseDialog;
 import com.rock.baserxproject.R;
+import com.rock.baserxproject.utils.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +67,7 @@ public class ImagePagerDialog extends BaseDialog implements ViewPager.OnPageChan
         public Object instantiateItem(ViewGroup container, int position) {
             PhotoView view = new PhotoView(mContext);
             view.enable();
-            view.setScaleType(ImageView.ScaleType.FIT_CENTER);
+//            view.setScaleType(ImageView.ScaleType.FIT_CENTER);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -75,11 +76,12 @@ public class ImagePagerDialog extends BaseDialog implements ViewPager.OnPageChan
             });
             container.addView(view);
 //            GlideUtils.loadImage(mContext, images.get(position), view);
-            Glide.with(mContext)
-                    .load(images.get(position))
-                    .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-//                    .placeholder(R.mipmap.ic_launcher)
-                    .into(view);
+//            Glide.with(mContext)
+//                    .load(images.get(position))
+//                    .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+////                    .placeholder(R.mipmap.ic_launcher)
+//                    .into(view);
+            ImageLoader.loadImage(mContext,images.get(position),view);
             return view;
         }
 

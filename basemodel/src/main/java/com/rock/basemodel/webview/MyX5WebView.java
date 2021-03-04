@@ -136,6 +136,7 @@ public class MyX5WebView extends WebView {
         webSetting.setAppCacheMaxSize(Long.MAX_VALUE);
         webSetting.setPluginState(WebSettings.PluginState.ON_DEMAND);
         webSetting.setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webSetting.setDisplayZoomControls(false);
         //android 默认是可以打开_bank的，是因为它默认设置了WebSettings.setSupportMultipleWindows(false)
         //在false状态下，_bank也会在当前页面打开……
         //而x5浏览器，默认开启了WebSettings.setSupportMultipleWindows(true)，
