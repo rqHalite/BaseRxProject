@@ -43,7 +43,7 @@ public class PictureFragment extends MyFragment implements BaseQuickAdapter.Requ
     @BindView(R.id.pic_list)
     RecyclerView picList;
 
-    private List<String> images =new ArrayList<>();
+    private List<String> images = new ArrayList<>();
     private List<HttpBean.DataBean> mDatas = new ArrayList<>();
     private PicListAdapter mAdapter;
     private int page = 50;
@@ -82,7 +82,7 @@ public class PictureFragment extends MyFragment implements BaseQuickAdapter.Requ
             }
         });
         //解决上下间隔
-        picList.addItemDecoration(new StaggeredDividerItemDecoration(getActivity(),5));
+        picList.addItemDecoration(new StaggeredDividerItemDecoration(getActivity(), 5));
         datas();
     }
 
@@ -107,7 +107,7 @@ public class PictureFragment extends MyFragment implements BaseQuickAdapter.Requ
                     }
                     page += 4;
                     mDatas.addAll(results);
-                    for (HttpBean.DataBean b: mDatas ) {
+                    for (HttpBean.DataBean b : mDatas) {
                         images.add(b.getUrl());
                     }
                     mAdapter.loadMoreComplete();

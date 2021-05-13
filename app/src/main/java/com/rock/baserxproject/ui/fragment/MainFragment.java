@@ -127,7 +127,7 @@ public class MainFragment extends MyFragment implements BaseQuickAdapter.OnItemC
         map.put("count", "" + number);
         map.put("page", "" + page);
         map.put("type", "Android");
-        RxAppNetWorkUtils.getTestList(this, map, new MyObserver(getActivity(),false) {
+        RxAppNetWorkUtils.getTestList(this, map, new MyObserver(getActivity(), false) {
             @Override
             public void onSuccess(Object demo) {
                 refreshlayout.finishRefresh(true);
@@ -146,7 +146,7 @@ public class MainFragment extends MyFragment implements BaseQuickAdapter.OnItemC
             @Override
             public void onFailure(Throwable e, String errorMsg) {
                 mAdapter.loadMoreFail();
-                ToastUtil.show(getActivity(),"失败");
+                ToastUtil.show(getActivity(), "失败");
             }
         });
     }
@@ -154,7 +154,7 @@ public class MainFragment extends MyFragment implements BaseQuickAdapter.OnItemC
     @Override
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
         mBundle = new Bundle();
-        mBundle.putString(X5WebActivity.WEB_URL,mData.get(position).getUrl());//
+        mBundle.putString(X5WebActivity.WEB_URL, mData.get(position).getUrl());//
         skipActivity(X5WebActivity.class);
     }
 

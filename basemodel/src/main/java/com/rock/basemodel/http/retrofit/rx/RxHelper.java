@@ -52,13 +52,13 @@ public class RxHelper {
     }
 
     private static <T> ObservableSource<T> composeContext(Context context, Observable<T> observable) {
-        if(context instanceof RxActivity) {
+        if (context instanceof RxActivity) {
             return observable.compose(((RxActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
-        } else if(context instanceof RxFragmentActivity){
+        } else if (context instanceof RxFragmentActivity) {
             return observable.compose(((RxFragmentActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
-        }else if(context instanceof RxAppCompatActivity){
+        } else if (context instanceof RxAppCompatActivity) {
             return observable.compose(((RxAppCompatActivity) context).bindUntilEvent(ActivityEvent.DESTROY));
-        }else {
+        } else {
             return observable;
         }
     }

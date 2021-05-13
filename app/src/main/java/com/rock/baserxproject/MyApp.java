@@ -7,7 +7,7 @@ import com.rock.basemodel.BaseApplication;
  * @author Ruanqi
  * @time 2019/7/29
  */
-public class MyApp  extends BaseApplication {
+public class MyApp extends BaseApplication {
 
     @Override
     public void onCreate() {

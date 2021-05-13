@@ -33,8 +33,8 @@ public class MD5Tools {
     static final int S42 = 10;
     static final int S43 = 15;
     static final int S44 = 21;
-    static final byte[] PADDING = { -128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    static final byte[] PADDING = {-128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+            0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
     /*
      * 下面的三个成员是MD5计算过程中用到的3个核心数据，在原始的C实现中 被定义到MD5_CTX结构中
      */
@@ -57,16 +57,13 @@ public class MD5Tools {
      * getMD5ofStr是类MD5最主要的公共方法，入口参数是你想要进行MD5变换的字符串 返回的是变换完的结果，这个结果是从公共成员digestHexStr取得的．
      */
 
-    public byte[] getMD5(String inbuf)
-    {
+    public byte[] getMD5(String inbuf) {
         md5Init();
-        try{
+        try {
 
             byte str[] = inbuf.getBytes("ISO8859_1");
             md5Update(str, str.length);
-        }
-        catch (java.io.UnsupportedEncodingException e)
-        {
+        } catch (java.io.UnsupportedEncodingException e) {
             md5Update(inbuf.getBytes(), inbuf.length());
         }
         md5Final();
@@ -92,21 +89,18 @@ public class MD5Tools {
         return digest;
     }
 
-    public String getMD5ofStr(String inbuf)
-    {
+    public String getMD5ofStr(String inbuf) {
         md5Init();
-        try
-        {
+        try {
 
-            byte str[] = inbuf.getBytes("ISO8859_1"); md5Update(str, str.length);
-        } catch (java.io.UnsupportedEncodingException e)
-        {
+            byte str[] = inbuf.getBytes("ISO8859_1");
+            md5Update(str, str.length);
+        } catch (java.io.UnsupportedEncodingException e) {
             md5Update(inbuf.getBytes(), inbuf.length());
         }
         md5Final();
         digestHexStr = "";
-        for (int i = 0; i < 16; i++)
-        {
+        for (int i = 0; i < 16; i++) {
             digestHexStr +=
                     byteHEX(digest[i]);
         }
@@ -441,7 +435,7 @@ public class MD5Tools {
      * byteHEX()，用来把一个byte类型的数转换成十六进制的ASCII表示， 　因为java中的byte的toString无法实现这一点，我们又没有C语言中的 sprintf(outbuf,"%02X",ib)
      */
     public static String byteHEX(byte ib) {
-        char[] Digit = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+        char[] Digit = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
         char[] ob = new char[2];
         ob[0] = Digit[(ib >>> 4) & 0X0F];
         ob[1] = Digit[ib & 0X0F];
@@ -474,7 +468,7 @@ public class MD5Tools {
 
     public static String toMD5(InputStream is, long length) {
         MD5Tools md5 = new MD5Tools();
-        byte[] dst =  md5.getMD5(is, length);
+        byte[] dst = md5.getMD5(is, length);
         String result = "";
         for (int i = 0; i < 16; i++) {
             result += byteHEX(dst[i]);
@@ -524,12 +518,12 @@ public class MD5Tools {
     public static String getMD5String(byte[] source) {
         String s = null;
         char hexDigits[] = { // 用来将字节转换成 16 进制表示的字符
-                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             md.update(source);
             /*
-		     */
+             */
             byte tmp[] = md.digest(); // MD5 的计算结果是一个 128 位的长整数，
             // 用字节表示就是 16 个字节
             char str[] = new char[16 * 2]; // 每个字节用 16 进制表示的话，使用两个字符，
@@ -553,8 +547,7 @@ public class MD5Tools {
     /**
      * 计算文件的MD5
      *
-     * @param sourceFile
-     *            要计算的文件.
+     * @param sourceFile 要计算的文件.
      * @return
      * @throws FileNotFoundException
      */
@@ -566,7 +559,7 @@ public class MD5Tools {
 
         String s = null;
         char hexDigits[] = { // 用来将字节转换成 16 进制表示的字符
-                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+                '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
 
@@ -574,7 +567,7 @@ public class MD5Tools {
                 md.update(buffer, 0, len);
             }
             /*
-		       */
+             */
             byte tmp[] = md.digest(); // MD5 的计算结果是一个 128 位的长整数，
             // 用字节表示就是 16 个字节
             char str[] = new char[16 * 2]; // 每个字节用 16 进制表示的话，使用两个字符，
@@ -600,26 +593,27 @@ public class MD5Tools {
         }
         return s;
     }
-    public static String HEXByte(byte[] bs){
-        try{
-            byte[] ret = new byte[bs.length /2];
-            for(int i = 0;i < ret.length;i++){
-                ret[i]= (byte)((getByte(bs[2*i])<<4) + (getByte(bs[2*i+1])));
+
+    public static String HEXByte(byte[] bs) {
+        try {
+            byte[] ret = new byte[bs.length / 2];
+            for (int i = 0; i < ret.length; i++) {
+                ret[i] = (byte) ((getByte(bs[2 * i]) << 4) + (getByte(bs[2 * i + 1])));
             }
-            return new String(ret,"ISO-8859-1");
-        }catch (Exception e) {
+            return new String(ret, "ISO-8859-1");
+        } catch (Exception e) {
             e.printStackTrace();
             return "";
         }
     }
 
-    private static byte getByte(byte b){
-        if(b >='0' && b <='9'){
-            return (byte)(b-'0');
-        } else if(b>='a' && b<='f'){
-            return (byte) (b-'a'+10);
-        } else if(b>='A' && b<='F'){
-            return (byte) (b-'A'+10);
+    private static byte getByte(byte b) {
+        if (b >= '0' && b <= '9') {
+            return (byte) (b - '0');
+        } else if (b >= 'a' && b <= 'f') {
+            return (byte) (b - 'a' + 10);
+        } else if (b >= 'A' && b <= 'F') {
+            return (byte) (b - 'A' + 10);
         } else {
             return '0';
         }
@@ -627,11 +621,12 @@ public class MD5Tools {
 
     /**
      * MD5加密
+     *
      * @param s
      * @return
      */
     public static String MD5(String s) {
-        char hexDigits[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
+        char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
         try {
             byte[] btInput = s.getBytes();
             // 获得MD5摘要算法的 MessageDigest 对象

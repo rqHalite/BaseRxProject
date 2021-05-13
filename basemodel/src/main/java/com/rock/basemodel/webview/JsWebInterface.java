@@ -18,7 +18,6 @@ public class JsWebInterface {
     }
 
 
-
     //清空路由历史
     @JavascriptInterface
     public void clearHistory() {

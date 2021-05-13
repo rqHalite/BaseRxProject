@@ -44,8 +44,7 @@ public class PermissionUtils {
      * 检查权限 并且打开
      *
      * @param activity
-     * @param check_permissions
-     *  SDK_INT 6.0 23         该版本以上检查权限
+     * @param check_permissions SDK_INT 6.0 23         该版本以上检查权限
      * @param requestCode       设置完毕返回码
      * @return true 表示已有 所查权限
      */

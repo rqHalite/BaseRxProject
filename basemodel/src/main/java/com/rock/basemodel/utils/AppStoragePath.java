@@ -7,7 +7,7 @@ import java.io.File;
 /**
  * @author: ruan
  * @date: 2020/4/14
- *设置文件路径
+ * 设置文件路径
  */
 public class AppStoragePath {
 
@@ -34,18 +34,18 @@ public class AppStoragePath {
         return head + url;
     }
 
-    public static void setCachePath(String path){
+    public static void setCachePath(String path) {
         AppStoragePath.CACHE_PATH = path;
         File mFile = new File(path);
-        if(!mFile.exists()){
+        if (!mFile.exists()) {
             mFile.mkdirs();
         }
     }
 
-    public static String getCachePath(Context context){
+    public static String getCachePath(Context context) {
         String cache = StorageUtils.getCacheDirectory(context) + "/" + MD5Tools.hashKeyForDisk("demo_loadfile");
         File mFile = new File(cache);
-        if(!mFile.exists()){
+        if (!mFile.exists()) {
             mFile.mkdirs();
         }
         return cache;

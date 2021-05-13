@@ -1,9 +1,7 @@
 package com.rock.basemodel.http.basebean;
 
 /**
- * author：libilang
  * time: 17/11/8 20:00
- * 邮箱：libi_lang@163.com
  * 用于捕获服务器约定的错误类型
  */
 public class ResultException extends RuntimeException {

@@ -37,6 +37,7 @@ public class DynamicFragment extends MyFragment implements BaseQuickAdapter.OnIt
     private List<HttpBean.DataBean> mData = new ArrayList<>();
     private int number = 2;
     private int page = 1;
+
     public static DynamicFragment newInstance(String title) {
         // Required empty public constructor
         DynamicFragment fragment = new DynamicFragment();
@@ -60,12 +61,13 @@ public class DynamicFragment extends MyFragment implements BaseQuickAdapter.OnIt
         mAdapter.setLoadMoreView(new CustomLoadMoreView());
         http();
     }
+
     private void http() {
         Map<String, String> map = new HashMap<>();
         map.put("count", "" + number);
         map.put("page", "" + page);
         map.put("type", mTitle);
-        RxAppNetWorkUtils.getTestList(this, map, new MyObserver(getActivity(),false) {
+        RxAppNetWorkUtils.getTestList(this, map, new MyObserver(getActivity(), false) {
             @Override
             public void onSuccess(Object demo) {
                 HttpBean bean = (HttpBean) demo;
@@ -83,7 +85,7 @@ public class DynamicFragment extends MyFragment implements BaseQuickAdapter.OnIt
             @Override
             public void onFailure(Throwable e, String errorMsg) {
                 mAdapter.loadMoreFail();
-                ToastUtil.show(getActivity(),"失败");
+                ToastUtil.show(getActivity(), "失败");
             }
         });
     }
@@ -93,7 +95,7 @@ public class DynamicFragment extends MyFragment implements BaseQuickAdapter.OnIt
 //        ToastUtils.show("打开网页");
         toast("打开网页");
         mBundle = new Bundle();
-        mBundle.putString(X5WebActivity.WEB_URL,mData.get(position).getUrl());//
+        mBundle.putString(X5WebActivity.WEB_URL, mData.get(position).getUrl());//
         skipActivity(X5WebActivity.class);
     }
 

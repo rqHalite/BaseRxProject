@@ -15,7 +15,7 @@ import com.rock.basemodel.screentools.utils.dp2pxUtils;
 
 public class LoadViewHelper extends AbsLoadViewHelper {
 
-     public LoadViewHelper(Context context, int designWidth, int designDpi, float fontSize, String unit) {
+    public LoadViewHelper(Context context, int designWidth, int designDpi, float fontSize, String unit) {
         super(context, designWidth, designDpi, fontSize, unit);
     }
 
@@ -41,7 +41,6 @@ public class LoadViewHelper extends AbsLoadViewHelper {
             textView.setMinHeight(setValue(textView.getMinHeight()));
         }
     }
-
 
 
     private float setFontSize(TextView textView) {
@@ -114,7 +113,6 @@ public class LoadViewHelper extends AbsLoadViewHelper {
         }
         return 0;
     }
-
 
 
 }

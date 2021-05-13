@@ -11,12 +11,12 @@ import okhttp3.Response;
  * @date: 2020/4/14
  * 自定义下载拦截器
  */
-public class Downloadinterceptor  implements Interceptor {
+public class Downloadinterceptor implements Interceptor {
     private DownFileCallback downFileCallback;
 
     private String downUrl;
 
-    public Downloadinterceptor(DownFileCallback listener,String downUrl) {
+    public Downloadinterceptor(DownFileCallback listener, String downUrl) {
         this.downFileCallback = listener;
         this.downUrl = downUrl;
     }
@@ -26,7 +26,7 @@ public class Downloadinterceptor  implements Interceptor {
         Response response = chain.proceed(chain.request());
 
         return response.newBuilder()
-                .body(new DownloadResponseBody(response.body(), downFileCallback,downUrl))
+                .body(new DownloadResponseBody(response.body(), downFileCallback, downUrl))
                 .build();
     }
 }

@@ -9,8 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 
+import androidx.core.content.ContextCompat;
+
+import com.rock.basemodel.baseui.utils.BarTextColorUtils;
 import com.rock.baserxproject.R;
 import com.rock.baserxproject.base.MyFragment;
 
@@ -27,8 +31,6 @@ public class MineFragment extends MyFragment {
 
     @BindView(R.id.status_bar_fix)
     View mStateBarFixer;
-    @BindView(R.id.back)
-    ImageView back;
     Unbinder unbinder;
     private ArgbEvaluator evaluator;
 
@@ -45,24 +47,12 @@ public class MineFragment extends MyFragment {
 
     @Override
     protected void initData() {
-//        View mStateBarFixer = mView.findViewById(R.id.status_bar_fix);
-//        mStateBarFixer.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-//                getStateBarHeight(getActivity())));//填充状态栏
-//
-//        evaluator = new ArgbEvaluator();
-//        int evaluate = (Integer) evaluator.evaluate(0, 0x00000000, 0XFFE93030);
-//        mStateBarFixer.setBackgroundColor(evaluate);//状态栏填充布局也要更改颜色
-
-//        basestatus_view = findViewById(R.id.basestatus_view);
-//        View baseroot_view = findViewById(R.id.baseroot_view);
-//        int statusheight = BarTextColorUtils.getStatusBarHeight(this);
-//        if (statusheight != -1) {
-//            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusheight);
-//            basestatus_view.setLayoutParams(params);
-//            FrameLayout.LayoutParams fparams = (FrameLayout.LayoutParams) baseroot_view.getLayoutParams();
-//            fparams.topMargin = -statusheight;
-//            baseroot_view.setLayoutParams(fparams);
-//        }
+        int statusheight = BarTextColorUtils.getStatusBarHeight(mActivity);
+        if (statusheight != -1) {
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusheight);
+            mStateBarFixer.setLayoutParams(params);
+            mStateBarFixer.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.toolbar_tint_color));
+        }
     }
 
 
@@ -94,14 +84,5 @@ public class MineFragment extends MyFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
-    }
-
-
-    @OnClick({R.id.back})
-    public void onClick(View view){
-        switch (view.getId()){
-            case R.id.back:
-                break;
-        }
     }
 }

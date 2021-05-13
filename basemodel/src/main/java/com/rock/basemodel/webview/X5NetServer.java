@@ -19,6 +19,7 @@ import com.tencent.smtt.sdk.QbSdk;
 public class X5NetServer extends IntentService {
     public static final String CHANNEL_ID_STRING = "service_x5";
     public static final String TAG = "x5webview";
+
     public X5NetServer() {
         super(TAG);
     }
@@ -41,8 +42,9 @@ public class X5NetServer extends IntentService {
         public void onViewInitFinished(boolean arg0) {
             // TODO Auto-generated method stub
             //x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
-                Log.i("app", " onViewInitFinished is  -------------------------------------------" + arg0);
+            Log.i("app", " onViewInitFinished is  -------------------------------------------" + arg0);
         }
+
         @Override
         public void onCoreInitFinished() {
             // TODO Auto-generated method stub
@@ -51,8 +53,8 @@ public class X5NetServer extends IntentService {
     };
 
     /**
-     *为了防止8.0以上系统
-     *IllegalStateException: Not allowed to start service Intent
+     * 为了防止8.0以上系统
+     * IllegalStateException: Not allowed to start service Intent
      */
     @Override
     public void onCreate() {

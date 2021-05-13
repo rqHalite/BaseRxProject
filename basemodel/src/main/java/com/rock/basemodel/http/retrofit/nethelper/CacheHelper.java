@@ -1,7 +1,6 @@
 package com.rock.basemodel.http.retrofit.nethelper;
 
 
-
 import com.rock.basemodel.BaseApplication;
 
 import java.io.File;
@@ -10,9 +9,7 @@ import okhttp3.Cache;
 
 /**
  * 缓存帮助类
- * author：libilang
  * time: 17/10/31 20:00
- * 邮箱：libi_lang@163.com
  */
 
 

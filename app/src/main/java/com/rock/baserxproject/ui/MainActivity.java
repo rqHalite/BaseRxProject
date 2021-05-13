@@ -17,7 +17,9 @@ import com.rock.baserxproject.ui.fragment.MessageFragment;
 import com.rock.baserxproject.ui.fragment.MineFragment;
 import com.rock.baserxproject.ui.fragment.PictureFragment;
 import com.trello.rxlifecycle2.components.support.RxFragment;
+
 import java.util.ArrayList;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 

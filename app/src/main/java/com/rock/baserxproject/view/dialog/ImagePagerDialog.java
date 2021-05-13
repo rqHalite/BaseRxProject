@@ -43,7 +43,7 @@ public class ImagePagerDialog extends BaseDialog implements ViewPager.OnPageChan
         adapter.notifyDataSetChanged();
         viewPager.setCurrentItem(index);
 
-       textView.setText(String.format("%s/%s", "" + (index + 1), "" + images.size()));
+        textView.setText(String.format("%s/%s", "" + (index + 1), "" + images.size()));
         super.show();
     }
 
@@ -81,7 +81,7 @@ public class ImagePagerDialog extends BaseDialog implements ViewPager.OnPageChan
 //                    .diskCacheStrategy(DiskCacheStrategy.SOURCE)
 ////                    .placeholder(R.mipmap.ic_launcher)
 //                    .into(view);
-            ImageLoader.loadImage(mContext,images.get(position),view);
+            ImageLoader.loadImage(mContext, images.get(position), view);
             return view;
         }
 

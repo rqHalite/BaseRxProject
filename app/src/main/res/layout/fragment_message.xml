@@ -14,6 +14,7 @@
         android:layout_height="0px" />
 
     <ImageView
+        android:layout_below="@+id/top_status"
         android:id="@+id/iv_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,9 +22,10 @@
         android:layout_marginTop="-200dp"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background" />
+        android:src="@mipmap/ic_message_title" />
 
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_below="@+id/top_status"
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -31,7 +33,7 @@
 
         <com.scwang.smartrefresh.layout.header.ClassicsHeader
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/px_150"
             app:srlAccentColor="@android:color/white" />
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout

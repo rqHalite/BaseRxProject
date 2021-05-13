@@ -22,6 +22,6 @@ public class MainAdapter extends BasicQuickAdapter<HttpBean.DataBean, BasicViewH
     @Override
     protected void convert(BasicViewHolder helper, HttpBean.DataBean item) {
         super.convert(helper, item);
-        helper.addOnClickListener(R.id.list_item_layout).setText(R.id.item_text,item.getDesc());
+        helper.addOnClickListener(R.id.list_item_layout).setText(R.id.item_text, item.getDesc());
     }
 }

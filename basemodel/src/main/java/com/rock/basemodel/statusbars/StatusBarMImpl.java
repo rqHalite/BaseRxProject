@@ -8,7 +8,6 @@ import android.view.WindowManager;
 
 /**
  * 兼容M版本
- *
  */
 
 class StatusBarMImpl implements IStatusBar {

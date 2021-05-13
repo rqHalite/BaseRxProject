@@ -42,7 +42,7 @@ public class X5WebActivity extends BasicTitleActivity {
             mIntentUrl = getIntent().getExtras().getString(WEB_URL);
             mWebView.loadUrl(mIntentUrl);
         }
-        Log.i("url","url 》》》》》》》" + mIntentUrl);
+        Log.i("url", "url 》》》》》》》" + mIntentUrl);
     }
 
 
@@ -89,7 +89,6 @@ public class X5WebActivity extends BasicTitleActivity {
             mWebView.destroy();
         }
     }
-
 
 
 }

@@ -17,6 +17,7 @@ public class UserUtils {
     private SharedPreferences.Editor mEditor;
 
     private static UserUtils mInstance = null;
+
     public UserUtils(Context context) {
         mContext = context;
         mSharedPreferences = context.getSharedPreferences(
@@ -25,7 +26,7 @@ public class UserUtils {
     }
 
 
-    public static UserUtils getInstance(Context context){
+    public static UserUtils getInstance(Context context) {
         if (mInstance == null) {
             mInstance = new UserUtils(context);
         }
@@ -35,78 +36,88 @@ public class UserUtils {
 
     /**
      * 保存key
+     *
      * @param key
      * @param value
      */
-    public void saveValue(String key, String value){
+    public void saveValue(String key, String value) {
         mEditor.putString(key, value);
         mEditor.commit();
     }
 
-    /**传入KEY，得到对应的数据。
+    /**
+     * 传入KEY，得到对应的数据。
+     *
      * @param key
      * @return
      */
-    public String getValue(String key){
+    public String getValue(String key) {
         String retValue = mSharedPreferences.getString(key, "");
         return retValue;
     }
 
-    public void removeValue(String key){
+    public void removeValue(String key) {
         mEditor.putString(key, null);
         mEditor.commit();
     }
 
-    /**传入KEY，得到对应的数据。
+    /**
+     * 传入KEY，得到对应的数据。
+     *
      * @param key
      * @return
      */
-    public boolean getBooleanValue(String key){
+    public boolean getBooleanValue(String key) {
         boolean retValue = mSharedPreferences.getBoolean(key, false);
         return retValue;
     }
 
     /**
      * 存储boolean value
+     *
      * @param key
      * @param value
      */
-    public void saveBooleanValue(String key, boolean value){
+    public void saveBooleanValue(String key, boolean value) {
         mEditor.putBoolean(key, value);
         mEditor.commit();
     }
 
     /**
      * 储存int value
+     *
      * @param key
      * @param value
      */
-    public void saveIntValue(String key, int value){
+    public void saveIntValue(String key, int value) {
         mEditor.putInt(key, value);
         mEditor.commit();
     }
 
     /**
      * 获取int value
+     *
      * @return
      */
-    public int getIntVaule(String key){
+    public int getIntVaule(String key) {
         int retValue = mSharedPreferences.getInt(key, -1);
         return retValue;
     }
 
     /**
      * 获取int value
+     *
      * @return
      */
-    public long getLongVaule(String key){
+    public long getLongVaule(String key) {
         long retValue = mSharedPreferences.getLong(key, 0);
         return retValue;
     }
+
     /**
      * 置空shareperfence
      */
-    public void deleteFile(){
+    public void deleteFile() {
         mEditor.clear();
         mEditor.commit();
     }

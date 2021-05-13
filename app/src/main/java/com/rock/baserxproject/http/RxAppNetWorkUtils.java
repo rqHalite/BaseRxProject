@@ -13,12 +13,13 @@ import java.util.Map;
  */
 public class RxAppNetWorkUtils {
 
-    public static void getTestList(RxFragment activity, Map<String,String> map, MyObserver observer) {
+    public static void getTestList(RxFragment activity, Map<String, String> map, MyObserver observer) {
         RxAppRetrofitHelper.getInstance().
-                getTest(map.get("type"),map.get("page"),map.get("count")).compose(RxHelper.observableIO2Main(activity))
+                getTest(map.get("type"), map.get("page"), map.get("count")).compose(RxHelper.observableIO2Main(activity))
                 .subscribe(observer);
     }
-    public static void getPicList(RxFragment activity, Map<String,String> map, MyObserver observer) {
+
+    public static void getPicList(RxFragment activity, Map<String, String> map, MyObserver observer) {
         RxAppRetrofitHelper.getInstance().
                 getPic(map.get("count")).compose(RxHelper.observableIO2Main(activity))
                 .subscribe(observer);

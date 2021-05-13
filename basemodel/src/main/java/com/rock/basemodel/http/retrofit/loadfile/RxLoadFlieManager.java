@@ -83,7 +83,7 @@ public class RxLoadFlieManager {
                         .flatMap(new Function<String, ObservableSource<DownloadInfo>>() {
                             @Override
                             public ObservableSource<DownloadInfo> apply(String s) throws Exception {
-                                Log.i("load","----->> 文件连接地址"+ s);
+                                Log.i("load", "----->> 文件连接地址" + s);
                                 return Observable.just(createDownInfo(s));
                             }
                         })

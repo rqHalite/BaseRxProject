@@ -22,15 +22,15 @@ public class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> 
     @Override
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
-        Log.i("http", "数据返回响应 response--->  " + response);
-            //根据项目需求自定义，统一处理
+//        Log.i("http", "数据返回响应 response--->  " + response);
+        //根据项目需求自定义，统一处理
 //        try {
 //            JSONObject jsonObject = new JSONObject(response);
 //            JSONArray array = jsonObject.getJSONArray("data");
 //            if (jsonObject.getInt("page") == 1) {//访问成功
-                //code==0表示成功返回
+        //code==0表示成功返回
 //                String data = jsonObject.getString("data");
-                return gson.fromJson(response, type);
+        return gson.fromJson(response, type);
 //            } else {
 //                //ErrResponse 将msg解析为异常消息文本
 //                ErrResponse errResponse = gson.fromJson(response, ErrResponse.class);

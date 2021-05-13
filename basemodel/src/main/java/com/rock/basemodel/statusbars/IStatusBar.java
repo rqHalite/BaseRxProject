@@ -4,7 +4,6 @@ import android.view.Window;
 
 /**
  * 状态栏接口
- *
  */
 
 interface IStatusBar {

@@ -15,9 +15,7 @@ import okhttp3.ResponseBody;
 import retrofit2.Converter;
 
 /**
- * author：libilang
  * time: 17/11/9 16:10
- * 邮箱：libi_lang@163.com
  */
 
 final class JsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {

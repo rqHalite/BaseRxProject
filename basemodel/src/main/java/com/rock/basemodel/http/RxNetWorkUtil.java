@@ -10,9 +10,9 @@ import java.util.Map;
 
 public class RxNetWorkUtil {
 
-    public static void getTestList(RxFragment activity, Map<String,String> map, MyObserver observer) {
+    public static void getTestList(RxFragment activity, Map<String, String> map, MyObserver observer) {
         RxRetrofitHelper.getInstance().
-                getTest(map.get("type"),map.get("page"),map.get("count")).compose(RxHelper.observableIO2Main(activity))
+                getTest(map.get("type"), map.get("page"), map.get("count")).compose(RxHelper.observableIO2Main(activity))
                 .subscribe(observer);
     }
 //

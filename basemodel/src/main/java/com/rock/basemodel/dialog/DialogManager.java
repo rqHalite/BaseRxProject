@@ -15,12 +15,14 @@ public class DialogManager {
     private static DialogManager dialogManager;
     private BaseDialog loadingDialog;
     private BaseDialog dialog;
+
     public static synchronized DialogManager getInstance() {
         if (dialogManager == null) {
             dialogManager = new DialogManager();
         }
         return dialogManager;
     }
+
     /**
      * 显示加载中弹窗
      *
@@ -31,6 +33,7 @@ public class DialogManager {
         loadingDialog = new LoadingDialog(context);
         loadingDialog.show();
     }
+
     //销毁当前显示的dialog
     private void dismiss(BasicDialog dialog) {
         if (dialog != null && dialog.isShowing()) {
@@ -40,6 +43,7 @@ public class DialogManager {
             }
         }
     }
+
     public void dismissLoadingDialog() {
         dismiss(loadingDialog);
         loadingDialog = null;

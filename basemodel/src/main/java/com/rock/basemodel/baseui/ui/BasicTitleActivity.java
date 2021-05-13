@@ -22,7 +22,6 @@ import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 
-
 /**
  * created by zhud on 2018/10/25
  */

@@ -63,7 +63,7 @@ public class DownloadResponseBody extends ResponseBody {
                     if (bytesRead != -1) {
                         long loacalSize = file.length();//本地已下载的长度
                         long trueTotal = loacalSize + responseBody.contentLength() - totalBytesRead;//文件真实长度
-                        downFileCallback.onProgress(trueTotal,loacalSize);
+                        downFileCallback.onProgress(trueTotal, loacalSize);
                     } else {
 
                     }

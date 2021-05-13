@@ -16,6 +16,7 @@ import retrofit2.Retrofit;
 
 public class JsonConverterEncryptionFactory extends Converter.Factory {
     private final Gson gson;
+
     public static JsonConverterEncryptionFactory create() {
         return create(new Gson());
     }

@@ -34,7 +34,7 @@ public class StartActivity extends MyActivity {
         permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
         permissions.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (PermissionUtils.hasPermissionAndOpen(this, permissions, 0)) {
-            skipActivity(MainActivity.class);
+            skipActivity(MainAddActivity.class);
             finish();
         }
     }
@@ -47,7 +47,7 @@ public class StartActivity extends MyActivity {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {//同意权限
                 try {
                     Thread.sleep(3000);
-                    skipActivity(MainActivity.class);
+                    skipActivity(MainAddActivity.class);
                     finish();
                 } catch (InterruptedException e) {
                     e.printStackTrace();

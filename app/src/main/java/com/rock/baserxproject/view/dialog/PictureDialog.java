@@ -48,7 +48,7 @@ public class PictureDialog extends Dialog {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        view = View.inflate(mContext,R.layout.item_dialog_layout, null);
+        view = View.inflate(mContext, R.layout.item_dialog_layout, null);
         ScreenAdapterTools.getInstance().loadView(view);
         requestWindowFeature(Window.FEATURE_NO_TITLE);//去除屏幕的title
         setContentView(view);//设置diaolog的样式布局

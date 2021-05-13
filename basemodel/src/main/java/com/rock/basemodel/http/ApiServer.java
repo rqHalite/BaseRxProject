@@ -17,7 +17,7 @@ import retrofit2.http.Url;
 
 public abstract interface ApiServer {
 
-//    @GET("/v1/resource/search/{searchname}?suggest=true")
+    //    @GET("/v1/resource/search/{searchname}?suggest=true")
 //    Observable<BaseReponse<SearchDataList>>
 //    getSearchVideo(@Path("searchname") String searchname,
 //                   @Query("rank") String rank,
@@ -33,7 +33,7 @@ public abstract interface ApiServer {
 //    getTest2(@QueryMap Map<String, String> map);
 
 
-//    /**
+    //    /**
 //     * TODO Get请求
 //     */
 //    //第一种方式：GET不带参数

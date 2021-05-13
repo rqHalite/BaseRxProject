@@ -18,7 +18,7 @@ import io.reactivex.disposables.Disposable;
  */
 public abstract class MyObserver<T> extends BaseObserver<T> {
     private boolean mShowDialog;
-//    private ProgressDialog dialog;
+    //    private ProgressDialog dialog;
     private Context mContext;
     private Disposable d;
 
@@ -38,7 +38,7 @@ public abstract class MyObserver<T> extends BaseObserver<T> {
                 d.dispose();
             }
         } else {
-            if (mShowDialog == true){
+            if (mShowDialog == true) {
 
                 DialogManager.getInstance().showLoading(mContext);
             }

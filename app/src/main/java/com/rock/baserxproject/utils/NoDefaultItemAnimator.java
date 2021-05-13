@@ -76,6 +76,7 @@ public class NoDefaultItemAnimator extends SimpleItemAnimator {
     private static class ChangeInfo {
         public RecyclerView.ViewHolder oldHolder, newHolder;
         public int fromX, fromY, toX, toY;
+
         private ChangeInfo(RecyclerView.ViewHolder oldHolder, RecyclerView.ViewHolder newHolder) {
             this.oldHolder = oldHolder;
             this.newHolder = newHolder;
@@ -387,6 +388,7 @@ public class NoDefaultItemAnimator extends SimpleItemAnimator {
                 public void onAnimationStart(Animator animator) {
                     dispatchChangeStarting(changeInfo.newHolder, false);
                 }
+
                 @Override
                 public void onAnimationEnd(Animator animator) {
                     newViewAnimation.setListener(null);
@@ -420,6 +422,7 @@ public class NoDefaultItemAnimator extends SimpleItemAnimator {
             endChangeAnimationIfNecessary(changeInfo, changeInfo.newHolder);
         }
     }
+
     private boolean endChangeAnimationIfNecessary(ChangeInfo changeInfo, RecyclerView.ViewHolder item) {
         boolean oldItem = false;
         if (changeInfo.newHolder == item) {

@@ -15,7 +15,7 @@ import android.widget.LinearLayout;
 /**
  * File descripition:   屏幕相关的辅助类
  *
- * @author lp
+ * @author
  * @date 2019/1/31
  */
 public class ScreenUtil {

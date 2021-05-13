@@ -25,7 +25,7 @@ public class CircleTransform extends BitmapTransformation {
 
     private static float radius = 0f;
 
-    public CircleTransform(Context context,int dp) {
+    public CircleTransform(Context context, int dp) {
         this.radius = Resources.getSystem().getDisplayMetrics().density * dp;
     }
 

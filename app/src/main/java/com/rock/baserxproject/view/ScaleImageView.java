@@ -37,8 +37,8 @@ public class ScaleImageView extends ImageView {
             int height = MeasureSpec.getSize(heightMeasureSpec);
 
             float scale = (float) initHeight / (float) initWidth;
-            if (width > 0){
-                height = (int) ((float)width * scale);
+            if (width > 0) {
+                height = (int) ((float) width * scale);
             }
             setMeasuredDimension(width, height);
         } else {

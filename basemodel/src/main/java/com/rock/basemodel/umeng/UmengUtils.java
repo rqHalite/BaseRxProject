@@ -25,7 +25,7 @@ public class UmengUtils {
         try {
             Bundle metaData = application.getPackageManager().getApplicationInfo(application.getPackageName(), PackageManager.GET_META_DATA).metaData;
             // 友盟统计，API 说明：https://developer.umeng.com/docs/66632/detail/101814#h1-u521Du59CBu5316u53CAu901Au7528u63A5u53E32
-            UMConfigure.init(application, String.valueOf(metaData.get("UMENG_APPKEY")),"umeng", UMConfigure.DEVICE_TYPE_PHONE,"");
+            UMConfigure.init(application, String.valueOf(metaData.get("UMENG_APPKEY")), "umeng", UMConfigure.DEVICE_TYPE_PHONE, "");
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
@@ -66,8 +66,6 @@ public class UmengUtils {
         // 友盟统计
         MobclickAgent.onPause(fragment.getContext());
     }
-
-
 
 
     /**

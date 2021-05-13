@@ -8,7 +8,7 @@ import java.util.List;
  * @author: ruan
  * @date: 2020/5/15
  */
-public class PictureListBean  {
+public class PictureListBean {
 
 
     /**

@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
-  FragmentPagerAdapter fragment数量少使用
- 数量多使用 FragmentStatePagerAdapter
+ * FragmentPagerAdapter fragment数量少使用
+ * 数量多使用 FragmentStatePagerAdapter
  */
 public abstract class BasicFragmentAdapter<T extends Fragment> extends FragmentPagerAdapter {
 

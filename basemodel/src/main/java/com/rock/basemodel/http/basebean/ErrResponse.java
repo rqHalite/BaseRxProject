@@ -1,9 +1,7 @@
 package com.rock.basemodel.http.basebean;
 
 /**
- * author：libilang
  * time: 17/11/9 10:19
- * 邮箱：libi_lang@163.com
  * 解析错误实体基类 -- 具体情况看
  */
 public class ErrResponse {

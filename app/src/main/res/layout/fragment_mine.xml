@@ -10,13 +10,8 @@
         android:id="@+id/status_bar_fix"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#00000000">
-        <!--你的自定义actionbar布局--></View>
+        android:background="#00000000"/>
+        <!--你的自定义actionbar布局-->
 
-    <ImageView
-        android:id="@+id/back"
-        android:src="@drawable/icon_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+    <include layout="@layout/app_title"/>
 </LinearLayout>

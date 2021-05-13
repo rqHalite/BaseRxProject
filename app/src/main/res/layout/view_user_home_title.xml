@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@mipmap/ic_launcher">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/px_450"
-        android:background="@drawable/ic_launcher_background">
+        android:layout_height="@dimen/px_650"
+        android:background="@mipmap/ic_message_title2">
 
 
     </RelativeLayout>
 
-    <ImageView
-        android:layout_width="@dimen/px_300"
-        android:layout_height="@dimen/px_300"
-        android:layout_marginLeft="@dimen/px_45"
-        android:layout_marginTop="@dimen/px_300"
-         />
 
 
 </RelativeLayout>

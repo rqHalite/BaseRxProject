@@ -35,7 +35,7 @@ public class PicListAdapter extends BasicQuickAdapter<HttpBean.DataBean, BasicVi
         ScaleImageView imageView = helper.getView(R.id.pic_image);
         imageView.setInitSize(item.getWidth(), item.getHight());
 
-        ImageLoader.loadLargeImage(mContext,item.getUrl(),helper.getView(R.id.pic_image));
+        ImageLoader.loadLargeImage(mContext, item.getUrl(), helper.getView(R.id.pic_image));
         helper.addOnClickListener(R.id.pic_image);
     }
 }

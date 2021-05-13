@@ -42,7 +42,7 @@ public class OkHttpClientHelper {
         public void log(String message) {
             //打印retrofit日志
 //            if (API.mode == API.Mode.debug || API.mode == API.Mode.prerelease) {
-                Log.i("request", "Log ======================= " +message);
+//                Log.i("request", "Log ======================= " +message);
 //                Logger.json(message);
 //            }
         }

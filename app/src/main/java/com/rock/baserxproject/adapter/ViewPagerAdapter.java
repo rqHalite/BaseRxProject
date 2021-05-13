@@ -2,6 +2,7 @@ package com.rock.baserxproject.adapter;
 
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -29,7 +30,8 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     private List<RxFragment> mFragments;
     private List<String> mTitle;
     private FragmentManager fm;
-    public ViewPagerAdapter(FragmentManager fm, List<RxFragment> fragments , List<String> title) {
+
+    public ViewPagerAdapter(FragmentManager fm, List<RxFragment> fragments, List<String> title) {
         super(fm);
         this.fm = fm;
         this.mFragments = fragments;
@@ -45,10 +47,11 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return mFragments.size();
     }
+
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return mTitle == null ? "":mTitle.get(position);
+        return mTitle == null ? "" : mTitle.get(position);
     }
 
     @Override
@@ -58,22 +61,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             final long itemId = getItemId(i);
             //得到缓存fragment的名字
             String name = makeFragmentName(container.getId(), itemId);
-            //通过fragment名字Fragment fragment = fragments[position];
-            //        //判断当前的fragment是否已经被添加进入Fragmentanager管理器中
-            //        if (!fragment.isAdded()) {
-            //            FragmentTransaction transaction = manager.beginTransaction();
-            //            transaction.add(fragment, fragment.getClass().getSimpleName());
-            //            //不保存系统参数，自己控制加载的参数
-            //            transaction.commitAllowingStateLoss();
-            //            //手动调用,立刻加载Fragment片段
-            //            manager.executePendingTransactions();
-            //        }
-            //        if (fragment.getView().getParent() == null) {
-            //            //添加布局
-            //            container.addView(fragment.getView());
-            //        }
-            //        return fragment.getView(); 找到该对象
-            Fragment fragment =fm.findFragmentByTag(name);
+            Fragment fragment = fm.findFragmentByTag(name);
             if (fragment != null) {
                 //移除之前的fragment
                 ft.remove(fragment);

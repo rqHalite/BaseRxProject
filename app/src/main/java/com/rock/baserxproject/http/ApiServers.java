@@ -13,14 +13,15 @@ import retrofit2.http.Path;
  * @author Ruanqi
  * @time 2019/2/27
  */
-public  interface ApiServers {
+public interface ApiServers {
 
 
     @GET("/api/v2/data/category/GanHuo/type/{type}/page/{page}/count/{count}")
-     Observable<HttpBean> getTest(@Path("type") String type,
-                                          @Path("page") String page,
-                                          @Path("count") String count);
+    Observable<HttpBean> getTest(@Path("type") String type,
+                                 @Path("page") String page,
+                                 @Path("count") String count);
+
     @GET("/api/v2/hot/likes/category/Girl/count/{count}")
-     Observable<HttpBean> getPic(@Path("count") String count);
+    Observable<HttpBean> getPic(@Path("count") String count);
 
 }

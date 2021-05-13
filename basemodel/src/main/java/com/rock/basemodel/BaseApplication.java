@@ -25,8 +25,6 @@ import okhttp3.OkHttpClient;
 public abstract class BaseApplication extends Application {
 
     public static BaseApplication instance;
-//    private MyOkhttp mMyOkHttp;
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -95,7 +93,6 @@ public abstract class BaseApplication extends Application {
     public String getWebViewCachePath() {
         return FileUtil.getDiskCachePath(this) + "/cache/";
     }
-
 
 
 }

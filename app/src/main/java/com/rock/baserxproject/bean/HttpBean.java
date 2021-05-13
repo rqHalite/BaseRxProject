@@ -6,7 +6,7 @@ import java.util.List;
  * @author: ruan
  * @date: 2020/5/8
  */
-public class HttpBean{
+public class HttpBean {
 
 
     /**

@@ -18,7 +18,7 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
  * @time 2019/7/29
  * 用于屏幕适配，activity跳转等
  */
-public class BasicActivity  extends RxAppCompatActivity {
+public class BasicActivity extends RxAppCompatActivity {
 
     public static final int NORESULTCODE = -1;
     protected final String TAG = this.getClass().getSimpleName();
@@ -34,9 +34,11 @@ public class BasicActivity  extends RxAppCompatActivity {
         }
         BarTextColorUtils.setLightStatusBar(this, true);
     }
+
     protected void setStatusBarColor(int color) {
         StatusBarCompat.setStatusBarColor(this, getResources().getColor(color));
     }
+
     //跳转
     protected void skipActivity(Class cls, int ResultCode, Intent intent, Bundle bundle) {
         intent.setClass(this, cls);

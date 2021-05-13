@@ -75,7 +75,6 @@ public class MessageFragment extends MyFragment implements OnRefreshListener, Ap
     View topStatus;
     private List<RxFragment> mFragments = new ArrayList<>();
     private ViewPagerAdapter mViewPagerAdapter;
-    private CommonNavigator mCommonNavigator;
     private String[] titles = new String[]{"android", "ios", "flutter", "更多"};
     private List<String> mTitles = Arrays.asList(titles);
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
